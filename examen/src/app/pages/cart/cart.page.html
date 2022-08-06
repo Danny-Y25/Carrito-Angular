@@ -1,0 +1,142 @@
+<ion-header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Css -->
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
+  <title>Forms | Tailwind Admin</title>
+</ion-header>
+<ion-content>
+<!--Container -->
+<div class="mx-auto bg-grey-400">
+    <!--Screen-->
+    <div class="min-h-screen flex flex-col">
+        <!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
+                    <h1 class="text-white p-2">Logo</h1>
+                </div>
+             <!--
+                <div class="p-1 flex flex-row items-center">
+
+
+
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
+                    <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
+                    <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
+                        <ul class="list-reset">
+                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">My account</a></li>
+                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Notifications</a></li>
+                          <li><hr class="border-t mx-2 border-grey-ligght"></li>
+                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+-->
+
+            </div>
+        </header>
+        <!--/Header-->
+
+        <div class="flex flex-1">
+
+            <!--Sidebar-->
+            <!--Sidebar-->
+
+
+
+            <!--/Sidebar-->
+            <!--Main-->
+            <form action="/ObtenerDatos/" method="get" class="">
+            <main class="bg-white-300 flex-1 p-3 overflow-hidden">
+
+               <!--   <input class="buttons" type="submit" (click)="cargarTablets()" name="" value="Ingresar"> -->
+                <div class="flex flex-col">
+                    <!-- Stats Row Starts Here -->
+
+
+                    <!-- /Stats Row Ends Here -->
+
+                    <!-- Card Sextion Starts Here -->
+                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+
+                        <!-- card -->
+
+                        <div class="rounded overflow-hidden shadow bg-white mx-2 w-full"
+                        ng-controller="controller">
+                            <div class="px-6 py-2 border-b border-light-grey">
+                                <div class="font-bold text-xl">Lista de Tablets</div>
+                            </div>
+                            <div class="table-responsive" >
+
+
+                                <table class="table text-grey-darkest"  >
+
+                                    <thead class="bg-grey-dark text-white text-normal">
+                                    <tr>
+                                        <th style="width: 100px;" scope="col">id</th>
+                                        <th style="width: 200px;" scope="col">nombre</th>
+                                        <th style="width: 200px;" scope="col">Cantidad</th>
+                                        <th style="width: 200px;" scope="col">Precio Unit</th>
+
+
+                                        <th style="width: 200px; text-align: center;" colspan="2" scope="col">Opciones</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let product of products">
+                                            <td>{{product.id}}</td>
+                                            <td>{{product.nombre}}</td>
+                                            <td>
+                                              <!-- <input  type="number" value="1" min="1" [(ngModel)]="product.Cantidad" name="txtcantidad" > -->
+                                              <input  type="number" value="0" min="0" (change)="data($event,product)" >
+                                            </td>
+                                            <td>$ {{product.precio}}</td>
+
+
+
+                                            <td>
+                                                <button (click)="borrar(product)" class="bg-gray-200 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" style="color: white;">
+                                                    <span>Borrar</span>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <button (click)="comprar()" class="bg-gray-200 hover:bg-gray-500 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" style="color: white;">
+                                  <span>Comprar</span>
+                              </button>
+                            </div>
+                        </div>
+                        <!-- /card -->
+
+                    </div>
+                    <!-- /Cards Section Ends Here -->
+
+
+
+                    <!--/Profile Tabs-->
+                </div>
+            </main>
+        </form>
+            <!--/Main-->
+        </div>
+        <!--Footer-->
+        <footer class="bg-grey-darkest text-white p-2">
+            <div class="flex flex-1 mx-auto">&copy; My Design</div>
+            <div class="flex flex-1 mx-auto">Distributed by:  <a href="https://themewagon.com/" target=" _blank">Themewagon</a></div>
+        </footer>
+        <!--/footer-->
+
+    </div>
+
+</div>
+<script src="./main.js"></script>
+
+
+</ion-content>
